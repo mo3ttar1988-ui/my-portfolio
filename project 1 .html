@@ -1,143 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>project (1)</title>
-    <link rel="stylesheet" href="project 1.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BR Architects</title>
+  <style>
+   
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: #222;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+    nav .brand {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #ff4d4d;
+    }
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    
+    header {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      margin-top: 60px; 
+    }
+    header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    header h1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 3rem;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+      text-align: center;
+    }
+
+    
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 60px 20px;
+    }
+    .house img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .house p {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+   
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      padding: 60px 20px;
+      justify-items: center;
+    }
+    .team {
+      width: 100%;
+      max-width: 250px;
+      text-align: center;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .team img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    .team button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      border: none;
+      background-color: #222;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+ 
+    .contact-form {
+      max-width: 600px;
+      margin: 60px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 0 10px;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 100%;
+    }
+    .contact-form button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #222;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: #fff;
+    }
+
+    
+    @media(max-width: 768px){
+      .hamburger {
+        display: block;
+      }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 10px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .nav-links a {
+        margin: 10px 0;
+      }
+    }
+
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="content">
-        <a href="#image" id="br"><span>BR</span>   Architects</a>
-        <div class="links">
-            <a href="#project" >Projects</a>
-            <a href="#About">About</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </div>
-    </nav>
-    <header>
-        <div class="header">
-            <img src="architect.jpg" alt="">
-            <h1 id="image">
-                <span id="x">
-                Br
-            </span> Architects</h1>
-        </div>
-    </header>
-    
-    <section>
-        <h1 id="project"> Projects</h1>
-    <hr>
- <div class="house">
-    <img src="house2.jpg" >
-    <p> Summer House</p>
- </div>
- <div class="house">
-    <img src="house3.jpg" >
-    <p>Brick House</p>
- </div>
- <div class="house">
-    <img src="house4.jpg" >
-    <p>Renovated</p>
- </div>
- <div class="house">
-    <img src="house5.jpg" >
-    <p> Barn House</p>
- </div>
- <div class="house">
-    <img src="house4.jpg" >
-    <p> Summer House</p>
- </div>
- <div class="house">
-    <img src="house5.jpg" >
-    <p> Brick House</p>
- </div>
- <div class="house">
-    <img src="house3.jpg" >
-    <p> renovated</p>
- </div>
- <div class="house">
-    <img src="house2.jpg" >
-    <p>Barn House</p>
- </div>
-   
-   
-    
-    </section>
-    <br>
-    <br>
-    
-    <section>
-        <div id="section-two">
-            <h1 id="About"> ABout</h1>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam facere dolorum aut itaque, est minima incidunt alias labore nulla dicta molestiae <br> molestias recusandae ratione distinctio voluptates nostrum temporibus quo nesciunt! </p>
-        </div>
-    
-        <div class="team">
-            <img src="team1.jpg" alt>
-            <div class="teams">
-            <h1>dan star</h1>
-            <h2>CEo & Founder</h2>
-            <p> phasellus eget enime en lectus faucibus vestibulum.suspenbh sohgfjl</p>
-        </div>
-            <button> contact</button>
-        </div>
-        <div class="team">
-            <img src="team2.jpg" alt>
-            <div class="teams">
-            <h1>mike ross</h1>
-            <h2>architect</h2>
-            <p> phasellus eget enime en lectus faucibus vestibulum.suspenbh sohgfjl</p>
-        </div>
-            <button>contact</button>
 
-        </div>
-        <div class="team">
-            <img src="team3.jpg" alt>
-            <div class="teams">
-            <h1>john Doe</h1>
-            <h2>CEo & Founder</h2>
-            <p> phasellus eget enime en lectus faucibus vestibulum.suspenbh sohgfjl</p>
-        </div>
-            <button>contact</button>
 
-        </div>
-        <div class="team">
-            <img src="team4.jpg" alt>
-            <div class="teams">
-            <h1>jane Doe</h1>
-            <h2>architect</h2>
-            <p> phasellus eget enime en lectus faucibus vestibulum.suspenbh sohgfjl</p>
-        </div>
-            <button>contact</button>
-        </div>
-    </section>
-    <section>
-        <div class="contact">
-            <h1 id="contact"> contact</h1>
-            <p>lets get touch and talk about your next  project</p>
-            <form action="">
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="text" placeholder="subject">
-                <input type="text" placeholder="comment">
-            </form>
-            <button>SenD MessaGE</button>
-        </div>
-    </section>
-    <section>
-        <div class="map">
-        <img src="map.jpg" >
+  <nav>
+    <a href="#" class="brand">BR Architects</a>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <div class="nav-links" id="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </div>
-    </section>
-    <footer>
-        <div class="foot">
-            <span> made by mohamed</span>
-        </div>
-    </footer>
-    
+  </nav>
+
+ 
+  <header>
+    <img src="architect.jpg" alt="Architect">
+    <h1>BR Architects</h1>
+  </header>
+
+  
+  <section id="projects" class="projects-container">
+    <div class="house">
+      <img src="house2.jpg" alt="Summer House">
+      <p>Summer House</p>
+    </div>
+    <div class="house">
+      <img src="house3.jpg" alt="Brick House">
+      <p>Brick House</p>
+    </div>
+    <div class="house">
+      <img src="house4.jpg" alt="Renovated">
+      <p>Renovated</p>
+    </div>
+    <div class="house">
+      <img src="house5.jpg" alt="Barn House">
+      <p>Barn House</p>
+    </div>
+  </section>
+
+  
+  <section id="about" class="team-container">
+    <div class="team">
+      <img src="team1.jpg" alt="Dan Star">
+      <h3>Dan Star</h3>
+      <p>CEO & Founder</p>
+      <button>Contact</button>
+    </div>
+    <div class="team">
+      <img src="team2.jpg" alt="Mike Ross">
+      <h3>Mike Ross</h3>
+      <p>Architect</p>
+      <button>Contact</button>
+    </div>
+    <div class="team">
+      <img src="team3.jpg" alt="John Doe">
+      <h3>John Doe</h3>
+      <p>Architect</p>
+      <button>Contact</button>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-form">
+      <input type="text" placeholder="Name">
+      <input type="email" placeholder="Email">
+      <input type="text" placeholder="Subject">
+      <textarea rows="5" placeholder="Message"></textarea>
+      <button>Send Message</button>
+    </div>
+  </section>
+
+  
+  <footer>
+    &copy; 2025 Made by Mohamed
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  </script>
+
 </body>
 </html>

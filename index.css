@@ -1,0 +1,37 @@
+    
+      @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Playwrite+DE+VA+Guides&family=Playwrite+GB+J+Guides:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');  
+      *{
+        margin: 0;
+        padding: 0;
+        font-family: "Cairo", sans-serif;
+        font-weight: bold;
+      }
+     .navbar{
+      background-color:#0a92db !important ;
+      
+    }
+      .dropdown-item:hover{
+        background-color: rgb(171, 179, 194);
+        font-size: larger;
+      }
+      #x:hover{
+      border-radius: 30% !important;
+      transform: translate(10px);
+       
+      }
+      #x{
+        transition: .8s ease;
+      }
+ 
+     
+      .nav-item a:hover{
+       
+       font-size: larger;
+       font-weight: bolder;
+      }
+      .c:active{
+color: rgb(44, 44, 40) !important;
+font-size: larger;
+font-weight: bolder;
+      }
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attar Store</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="webfonts/all.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .card-text { overflow: auto; }
+    </style>
+</head>
+<body>
+    <div id="App">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-info">
+            <div class="container">
+                <div class="navbar-brand fs-3 fw-bolder text-secondary">Attar | Store</div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-lg-0 d-flex flex-row">
+                        <li class="nav-item">
+                            <button @click="path='product'" class="btn btn-danger me-1">Products</button>
+                        </li>
+                        <li class="nav-item">
+                            <button @click="path='cart'" class="btn btn-danger ms-1">Cart</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Products -->
+        <div v-if="path=='product'" class="container my-4">
+            <div class="row">
+                <div v-for="pro in products" :key="pro.id" class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="card my-3">
+                        <img :src="pro.image" alt="product image" style="height:150px; width:100%; object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{pro.title}}</h5>
+                            <p class="card-text" style="height: 120px;">{{pro.description}}</p>
+                            <div>Price: ${{pro.price}}</div>
+                            <div>Category: {{pro.category}}</div>
+                            <div class="text-primary fw-bolder my-1">Stock: {{pro.stock}}</div>
+                            <button class="btn btn-primary w-100" @click="add(pro)" :disabled="pro.stock==0">
+                                Add to cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart -->
+        <div v-else class="container my-5">
+            <h3 class="mb-3">Shopping Cart</h3>
+            <table class="table table-bordered table-hover text-center">
+                <thead class="table-light">
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in cart" :key="item.pro.id">
+                        <td>{{item.pro.title}}</td>
+                        <td><img :src="item.pro.image" alt="product image" style="height:80px; width:80px; object-fit:cover;"></td>
+                        <td>${{item.pro.price}}</td>
+                        <td>{{item.count}}</td>
+                        <td>${{(item.count * item.pro.price).toFixed(2)}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/vue.global.js"></script>
+    <script>
+        const products = [
+            {
+                "id": 1,
+                "title": "Fjallraven Foldsack",
+                "price": 109.95,
+                "description": "Your perfect pack for everyday use...",
+                "category": "men's clothing",
+                "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+                "stock": 12
+            },
+            {
+                "id": 2,
+                "title": "Mens Casual",
+                "price": 22.3,
+                "description": "Slim-fitting style...",
+                "category": "men's clothing",
+                "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+                "stock": 35
+            },
+            {
+                "id": 3,
+                "title": "Mens Cotton Jacket",
+                "price": 55.99,
+                "description": "Great outerwear jackets for Spring/Autumn...",
+                "category": "men's clothing",
+                "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+                "stock": 36
+            }
+            // يمكنك إضافة باقي المنتجات بنفس الطريقة
+        ];
+    </script>
+    <script>
+        const app = {
+            data() {
+                return {
+                    products: products,
+                    path: "product",
+                    cart: []
+                }
+            },
+            methods: {
+                add(pro) {
+                    let item = this.cart.find(ele => ele.pro.id === pro.id);
+                    if (!item) {
+                        this.cart.push({ pro: pro, count: 1 });
+                    } else {
+                        item.count++;
+                    }
+                    pro.stock--;
+                }
+            }
+        };
+        Vue.createApp(app).mount("#App");
+    </script>
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="webfonts/all.min.js"></script>
+</body>
+</html>

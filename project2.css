@@ -1,0 +1,159 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.content{
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow:0 10px 5px #ddd ;
+    padding: 10px;
+    z-index: 1;
+}
+.link{
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+.link a{
+    margin: 15px;
+    text-decoration: none;
+    color: black;
+   font-size: 12px;
+   padding: 4px;
+
+}
+.link a:hover{
+    background-color: gray;
+
+}
+#x{
+   letter-spacing: 3px; 
+   margin: 10px;
+   text-decoration: none;
+   color: black;
+   font-size: 12px;
+   padding: 4px;
+}
+#x:hover{
+    background-color: gray;
+}
+#image{
+    
+
+    position: relative;
+    top: 0;
+    left: 0;
+    margin:auto
+}
+#image img{
+    width: 100%;
+    
+}
+#image h1{
+    position: absolute;
+    bottom: 0 ;
+    left: 0;
+    margin: 10px;
+    color: rgb(70, 63, 63);
+}
+
+.about{
+    float: left;
+    width: calc(96% /2);
+margin: 1%;
+    
+    
+    
+    
+}
+.about img{
+    width: 49%;
+    margin-left: 300px;
+    opacity: 0.7;
+    
+}
+/* #abouts{
+    
+    float: right;
+    margin-right: 300px;
+}
+#abouts h1{
+    text-align:center ;
+}
+#abouts #p{
+    text-align: center;
+    font-size: medium;
+}
+#abouts p{
+    font-size: 15px;
+} */
+ .about h1{
+    margin-left: 100px;
+ }
+ .about #p{
+    margin-left: 115px;
+    font-size: medium;
+ }
+ .about p{
+    font-size: 15px;
+    
+ }
+#c{
+    color: #8d8484;
+}
+.menu{
+    float: right;
+    width: calc(96% /2);
+    margin: 1%;
+}
+.menu img{
+    width: 296px;
+    margin-top: 100px;
+
+    opacity: 0.7;
+}
+#menu{
+    
+    margin-top: 100px;
+    margin-left: 350px;
+    /* padding: 30px; */
+}
+
+#bread{
+    font-size: 15px;
+}
+.bread{
+    font-size: 10px;
+    color: grey;
+}
+.contact{
+    width: 100%;
+   /* padding: 30px; */
+    text-align: justify;
+    margin-left: 100px;
+    
+}
+input{
+    width: 50%;
+    border: none;
+    background-color: #ebeaea;
+    margin: 10px;
+    border-bottom: solid #ddb1b1 1px;
+    padding: 20px;
+}
+.contact button{
+    margin-top: 10px;
+    background-color: #f1eaea;
+h5
+    font-size: 13px;
+}
+.foot{
+    width: 100%;
+    background-color: #ddd;
+    height: 50%;
+    text-align: center;
+    padding: 15px;
+}
